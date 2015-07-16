@@ -7,6 +7,9 @@ import threading
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
+
 pins = [18, 23]
 
 def main():
