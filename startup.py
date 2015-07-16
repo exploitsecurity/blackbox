@@ -15,7 +15,7 @@ pins = [18, 23]
 def main():
     init()
     time.sleep(0.5)
-    initWireless()
+    print str(initWireless())
     
 def init():
     print '[*] Initiate LEDs [*]'
@@ -38,14 +38,17 @@ def initWireless():
             if 'wlan' in line:
                 print '[*] Wireless Card Detected [*]'
                 file.close()
+                return True
                 activeWireless()
             else:
                 print '[!] No Wireless Card Detected [!]'
                 file.close()
+                return False
                 errorWireless()
             break
     else:
         print '[!] No Wireless Card Detected [!]'
+        return False
         errorWireless()
 
 def activeWireless():
