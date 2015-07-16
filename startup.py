@@ -38,18 +38,18 @@ def initWireless():
             if 'wlan' in line:
                 print '[*] Wireless Card Detected [*]'
                 file.close()
-                return True
                 activeWireless()
+                return True
             else:
                 print '[!] No Wireless Card Detected [!]'
                 file.close()
-                return False
                 errorWireless()
+                return False
             break
     else:
         print '[!] No Wireless Card Detected [!]'
-        return False
         errorWireless()
+        return False
 
 def activeWireless():
     delete('iwconfig.txt')
