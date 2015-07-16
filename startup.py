@@ -23,9 +23,6 @@ def main():
         t.start()
     else:
         errorWireless()
-        
-    while True:
-        print "hello World"
     
 def init():
     print '[*] Initiate LEDs [*]'
@@ -80,11 +77,9 @@ def errorWireless():
 def initServer():
     print '[*] Starting WiFi Airspace Survey [*]'
     
-    try:
-        activeServer()
-        os.system('kismet_server -c wlan0 > /dev/null &')
-    except:
-        errorServer()
+
+    activeServer()
+    os.system('kismet_server -c wlan0 > /dev/null &')
     
 def activeServer():
     print '[*] WiFi Server is up and active [*]'
