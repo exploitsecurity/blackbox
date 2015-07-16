@@ -10,7 +10,11 @@ GPIO.setwarnings(False)
 GPIO.setup(18, GPIO.OUT)
 GPIO.setup(23, GPIO.OUT)
 
+GPIO.setup(24, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+
 pins = [18, 23]
+
+buttons = [24]
 
 def main():
     init()
@@ -23,6 +27,8 @@ def main():
         t.start()
     else:
         errorWireless()
+    
+    initButton()
     
 def init():
     print '[*] Initiate LEDs [*]'
@@ -88,6 +94,15 @@ def activeServer():
     
 def errorServer():
     print '[!] Unable to connect to WiFi Server [!]'
+    
+def initButton():
+    delay = 0
+    
+    while True:
+        if GPIO.input(buttons[0]) == False:
+            print 'Hello World'
+    
+    print 'buttons'
 
 def delete(c):
     os.system('rm ' + c)
