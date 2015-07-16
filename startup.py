@@ -14,6 +14,7 @@ pins = [18, 23]
 
 def main():
     init()
+    time.sleep(0.5)
     initWireless()
     
 def init():
