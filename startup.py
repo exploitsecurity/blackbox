@@ -104,6 +104,8 @@ def initButton():
             buttonDelay(delay)
             time.sleep(1)
             print str(delay)
+        elif delay == 3:
+            print 'reboot'
     
 def buttonDelay(i):
     print str(i)
