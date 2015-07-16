@@ -4,6 +4,9 @@ import time
 import os
 import threading
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
 pins = [18, 23]
 
 def main():
