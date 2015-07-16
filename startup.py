@@ -104,13 +104,29 @@ def initButton():
             buttonDelay(delay)
             time.sleep(1)
         elif delay == 3:
-            os.system('sudo reboot')
+            reboot()
     
 def buttonDelay(i):
     GPIO.output(pins[1], False)
     time.sleep(0.5)
     GPIO.output(pins[1], True)
     time.sleep(0.5)
+    
+def reboot():
+    status = True
+    counter = 0
+    
+    while status:
+        if counter < 5:
+            GPIO.output(pins[1], False)
+            time.sleep(0.25)
+            GPIO.output(pins[1], True)
+            time.sleep(0.25)
+            counter += 1
+        else:
+            status = False
+            os.system('sudo reboot')
+        
 
 def delete(c):
     os.system('rm ' + c)
