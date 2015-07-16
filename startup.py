@@ -49,7 +49,8 @@ def initWireless():
 
 def activeWireless():
     delete('iwconfig.txt')
-    print 'hsudsj'
+    
+    GPIO.output(pins[0], True)
 
 def errorWireless():
     delete('iwconfig.txt')
