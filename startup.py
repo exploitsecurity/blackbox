@@ -100,12 +100,18 @@ def initButton():
     
     while True:
         if GPIO.input(buttons[0]) == False:
-            delay += 0.5
-            print 'Hello World'
-            time.sleep(0.5)
+            delay += 1
+            buttonDelay()
+            time.sleep(1)
             print str(delay)
     
-    print 'buttons'
+def buttonDelay(i):
+    print str(i)
+    
+    GPIO.output(pins[1], False)
+    time.sleep(0.5)
+    GPIO.output(pins[1], True)
+    time.sleep(0.5)
 
 def delete(c):
     os.system('rm ' + c)
