@@ -23,6 +23,9 @@ def main():
         t.start()
     else:
         errorWireless()
+        
+    while True:
+        print "hello World"
     
 def init():
     print '[*] Initiate LEDs [*]'
