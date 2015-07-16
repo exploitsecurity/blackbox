@@ -127,8 +127,12 @@ def reboot():
             counter += 1
         else:
             status = False
+            clearLEDS()
             os.system('sudo reboot')
-        
+
+def clearLEDS():
+    for pin in pins:
+        GPIO.output(pins[pin], False)      
 
 def delete(c):
     os.system('rm ' + c)
