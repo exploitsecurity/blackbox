@@ -45,7 +45,6 @@ def initWireless():
             break
     else:
         print '[!] No Wireless Card Detected [!]'
-        file.close()
         errorWireless()
 
 def activeWireless():
