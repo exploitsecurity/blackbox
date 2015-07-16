@@ -31,7 +31,7 @@ def initWireless():
     
     os.system('iwconfig > iwconfig.txt')
     
-    if int(os.path.getsize('iwconfig')) > 0:
+    if int(os.path.getsize('iwconfig.txt')) > 0:
         file = open('iwconfig.txt', 'r')
         for line in file.readlines():
             if 'wlan' in line:
