@@ -103,13 +103,10 @@ def initButton():
             delay += 1
             buttonDelay(delay)
             time.sleep(1)
-            print str(delay)
         elif delay == 3:
-            print 'reboot'
+            os.system('sudo reboot')
     
 def buttonDelay(i):
-    print str(i)
-    
     GPIO.output(pins[1], False)
     time.sleep(0.5)
     GPIO.output(pins[1], True)
