@@ -79,7 +79,7 @@ def initServer():
     
 
     activeServer()
-    os.system('kismet_server -c wlan0 & kismit_pid = $! > /dev/null &')
+    os.system('kismet_server -c wlan0 > /dev/null &')
     
 def activeServer():
     print '[*] WiFi Server is up and active [*]'
