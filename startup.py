@@ -89,6 +89,7 @@ def activeServer():
     print os.system('ps')
     
 def errorServer():
+    print '[!] Unable to connect to WiFi Server [!]'
 
 def delete(c):
     os.system('rm ' + c)
