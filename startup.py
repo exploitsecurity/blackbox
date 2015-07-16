@@ -101,6 +101,7 @@ def initButton():
     while True:
         if GPIO.input(buttons[0]) == False:
             print 'Hello World'
+            time.sleep(0.5)
     
     print 'buttons'
 
