@@ -53,6 +53,12 @@ def activeWireless():
     GPIO.output(pins[0], True)
 
 def errorWireless():
+    while True:
+        GPIO.output(pins[0], True)
+        time.sleep(0.5)
+        GPIO.output(pins[0], False)
+        time.sleep(0.5)
+    
     delete('iwconfig.txt')
     print 'dsfsfd'
 
