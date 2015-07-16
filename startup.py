@@ -79,7 +79,7 @@ def initServer():
     
     try:
         activeServer()
-        os.system('kismet_server -c wlan0 > /dev/null 2>&1')
+        os.system('kismet_server -c wlan0 > /dev/null &')
     except:
         errorServer()
     
@@ -96,3 +96,5 @@ def delete(c):
 
 if __name__ == '__main__':
     main()
+    
+    # kismet_server -c wlan0 > /dev/null &
