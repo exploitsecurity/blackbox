@@ -96,14 +96,16 @@ def errorServer():
     print '[!] Unable to connect to WiFi Server [!]'
     
 def initButton():
+    status = True
     delay = 0
     
-    while True:
+    while status:
         if GPIO.input(buttons[0]) == False:
             delay += 1
             buttonDelay(delay)
             time.sleep(1)
         elif delay == 3:
+            status = False
             reboot()
     
 def buttonDelay(i):
