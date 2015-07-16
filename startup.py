@@ -17,6 +17,10 @@ def main():
     time.sleep(0.5)
     if initWireless() == True:
         activeWireless()
+        
+        global t
+        t = threading.Thread(target=initServer)
+        t.start()
     else:
         errorWireless()
     
@@ -52,11 +56,15 @@ def initWireless():
         return False
 
 def activeWireless():
+    print '[*] Wireless Active in Mono Mode [*]'
+    
     delete('iwconfig.txt')
     
     GPIO.output(pins[0], True)
 
 def errorWireless():
+    print '[!] Wireless Error unable to connect [!]'
+    
     while True:
         GPIO.output(pins[0], True)
         time.sleep(0.5)
@@ -66,6 +74,21 @@ def errorWireless():
     delete('iwconfig.txt')
     print 'dsfsfd'
 
+def initServer():
+    print '[*] Starting WiFi Airspace Survey [*]'
+    
+    try:
+        activeServer()
+        os.system('kismet_server -c wlan0 > /dev/null 2>&1')
+    except:
+        errorServer()
+    
+def activeServer():
+    print '[*] WiFi Server is up and active [*]'
+    GPIO.output(pins[2], True)
+    print os.system('ps')
+    
+def errorServer():
 
 def delete(c):
     os.system('rm ' + c)
