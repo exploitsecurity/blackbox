@@ -132,7 +132,7 @@ def reboot():
 
 def clearLEDS():
     for pin in pins:
-        GPIO.output(pins[pin], False)      
+        GPIO.output(pin, False)
 
 def delete(c):
     os.system('rm ' + c)
