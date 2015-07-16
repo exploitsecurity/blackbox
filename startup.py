@@ -100,7 +100,7 @@ def initButton():
     
     while True:
         if GPIO.input(buttons[0]) == False:
-            delay =+ 0.5
+            delay += 0.5
             print 'Hello World'
             time.sleep(0.5)
             print str(delay)
