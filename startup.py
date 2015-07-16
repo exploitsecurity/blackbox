@@ -83,7 +83,7 @@ def initServer():
     
 def activeServer():
     print '[*] WiFi Server is up and active [*]'
-    GPIO.output(pins[2], True)
+    GPIO.output(pins[1], True)
     print os.system('ps')
     
 def errorServer():
